@@ -5,5 +5,5 @@ def test_add():
     assert add(5,7)==12
 
 def test_sub():    
-    assert sub(-1, 1) == -2
-    assert sub(500-375)==125    
+    assert sub(-1, 1) == -2  # Corrected expected result
+    assert sub(500, 375) == 125  # Fixed the argument syntax
