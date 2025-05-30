@@ -1,2 +1,2 @@
-pandas
-pytest
+pytest==7.4.0
+numpy==1.25.0
