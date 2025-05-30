@@ -1,0 +1,45 @@
+# My Workflow Name
+name: Python_CI 
+
+# Trigger the workflows on any push to the main branch or pull request
+
+on:
+    # Event
+    push:
+        # My Branch Name
+        branches: ["main"]
+
+    # Event            
+    pull_request:
+        # My Branch Name
+        branches: ["main"]
+
+permissions:
+    contents: read        
+
+jobs:
+    test:
+        # ubuntu-latest is provide Container where this entire process will run
+        runs-on: ubuntu-latest
+
+        steps:
+            # Step - 1 : Check out the code from the repository
+            - name: Check out code
+              uses: actions/checkout@v2
+
+            # Step - 2 : Setup Python environment
+            - name: Setup Python 
+              uses: actions/setup-python@v2
+              with:
+                python-version: "3.8"
+
+            # Step - 3 : Install dependencies
+            - name: Install Dependencies
+              run:
+                python -m pip install --upgrade pip
+                python -m pip install -r requirements.txt
+
+            # Step - 4 : Run Tests
+            - name: Run Test
+              run: 
+                pytest
