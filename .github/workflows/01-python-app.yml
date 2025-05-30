@@ -1,4 +1,4 @@
-# My Workflow Name.
+# My Workflow Name
 name: Python_CI 
 
 # Trigger the workflows on any push to the main branch or pull request
