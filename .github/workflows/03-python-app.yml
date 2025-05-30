@@ -9,22 +9,18 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-    
     # Step 1: Code Check
     steps:
     - name: Check Out Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     # Step 2: Setup Python Environment
     - name: SetUp Python Environment
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: "3.8"
 
@@ -36,5 +32,4 @@ jobs:
     
     # Step 4: Run Tests        
     - name: Test with pytest
-      run: |
-        pytest
+      run: pytest
