@@ -18,7 +18,7 @@ permissions:
     contents: read        
 
 jobs:
-    test:
+    my_code_test:
         # ubuntu-latest is provide Container where this entire process will run
         runs-on: ubuntu-latest
 
